@@ -1,0 +1,556 @@
+<!doctype html>
+
+<html>
+<head>
+
+</head>
+<style>
+
+
+
+  body {
+    background-image: url("https://i.ibb.co/1dk6K9g/yanhlv.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  div.tooltip-donut {
+    position: absolute;
+
+    padding: .5rem;
+    background: #FFFFFF;
+    color: #313639;
+    border: 1px solid #313639;
+    border-radius: 8px;
+    pointer-events: none;
+    font-size: 1.3rem;
+    opacity: 0;
+
+  }
+
+
+</style>
+<body>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+
+<div class="tooltip-donut"></div>
+
+</body>
+
+<script>
+
+  var border=3;
+  var bordercolor='black';
+
+  var canvas =d3.select("body")
+    .append("svg")
+    .attr("width",1340)
+    .attr("height",600)
+    .style("stroke", bordercolor)
+    .style("stroke-width", border);
+
+  var div = d3.select("body").append("div")
+    .attr("class", "tooltip-donut")
+    .style("opacity", 0);
+
+  var circle1 =canvas.append("circle")
+    .attr("id", "A")
+    .attr("cx",450)
+    .attr("cy",200)
+    .attr("r",50)
+    .attr("fill","#2E4053 ")
+    .style("stroke", bordercolor)
+    .style("stroke-width", border);
+  canvas.append("text")
+    .attr("font-size","2em")
+    .attr("x",450)
+    .attr("y",210)
+    .attr("text-anchor","middle")
+    .text("2015")
+  circle1.on({
+    "mouseover": function(d) {
+      d3.select(this).style("cursor", "pointer");
+      d3.select(this).transition()
+        .attr('opacity', '.80');
+      div.transition()
+        .style("opacity", 1);
+      div.html("<strong>Totla Value<br></strong><strong>763,313,056 </strong>SAR<br><strong>29%</strong>")
+        .style("left",  "550px")
+        .style("top", "320px");
+    },
+    "mouseout": function(d) {
+      d3.select(this).style("cursor", "default");
+      d3.select(this).transition()
+        .attr('opacity', '1');
+      div.transition()
+        .style("opacity", 0);
+    }
+  });
+  circle1.on("click", click1);
+  function click1(d)
+  {
+
+    cam1();
+    canvas.remove();
+
+  };
+
+
+
+  var circle2 =canvas.append("circle")
+    .attr("cx",800)
+    .attr("cy",200)
+    .attr("r",50)
+    .attr("fill","#EB984E")
+    .style("stroke", bordercolor)
+    .style("stroke-width", border);
+  canvas.append("text")
+    .attr("font-size","2em")
+    .attr("x",800)
+    .attr("y",210)
+    .attr("text-anchor","middle")
+    .text("2016")
+  circle2.on({
+    "mouseover": function(d) {
+      d3.select(this).style("cursor", "pointer");
+      d3.select(this).transition()
+        .attr('opacity', '.65');
+      div.transition()
+        .style("opacity", 1);
+      div.html("<strong>Totla Value<br></strong><strong>688,410 </strong>SAR<br><strong>1%</strong>")
+        .style("left",  "550px")
+        .style("top", "320px");
+    },
+    "mouseout": function(d) {
+      d3.select(this).style("cursor", "default");
+      d3.select(this).transition()
+        .attr('opacity', '1');
+      div.transition()
+        .style("opacity", 0);
+    }
+  });
+  circle2.on("click", click2);
+  function click2(d)
+  {
+
+    cam2();
+    canvas.remove();
+  }
+
+
+
+
+  var circle3 =canvas.append("circle")
+    .attr("cx",450)
+    .attr("cy",500)
+    .attr("r",50)
+    .attr("fill","#8E44AD")
+    .style("stroke", bordercolor)
+    .style("stroke-width", border);
+  canvas.append("text")
+    .attr("font-size","2em")
+    .attr("x",450)
+    .attr("y",510)
+    .attr("text-anchor","middle")
+    .text("2017")
+  circle3.on({
+    "mouseover": function(d) {
+      d3.select(this).style("cursor", "pointer");
+      d3.select(this).transition()
+        .attr('opacity', '.80');
+      div.transition()
+        .style("opacity", 1);
+      div.html("<strong>Totla Value<br></strong><strong>831,881,293 </strong>SAR<br><strong>30%</strong>")
+        .style("left",  "550px")
+        .style("top", "320px");
+    },
+    "mouseout": function(d) {
+      d3.select(this).style("cursor", "default");
+      d3.select(this).transition()
+        .attr('opacity', '1');
+      div.transition()
+        .style("opacity", 0);
+    }
+  });
+  circle3.on("click", click3);
+  function click3(d)
+  {
+
+    cam3();
+    canvas.remove();
+  }
+
+
+  var circle4 =canvas.append("circle")
+    .attr("cx",800)
+    .attr("cy",500)
+    .attr("r",50)
+    .attr("fill","#922B21")
+    .style("stroke", bordercolor)
+    .style("stroke-width", border);
+  canvas.append("text")
+    .attr("font-size","2em")
+    .attr("x",800)
+    .attr("y",510)
+    .attr("text-anchor","middle")
+    .text("2018")
+  circle4.on({
+    "mouseover": function(d) {
+      d3.select(this).style("cursor", "pointer");
+      d3.select(this).transition()
+        .attr('opacity', '.80');
+       div.transition()
+        .style("opacity", 1);
+      div.html("<strong>Totla Value<br></strong><strong>1,103,900,503</strong>SAR<br><strong>40%</strong>")
+        .style("left",  "550px")
+        .style("top", "320px");
+    },
+    "mouseout": function(d) {
+      d3.select(this).style("cursor", "default");
+      d3.select(this).transition()
+        .attr('opacity', '1');
+      div.transition()
+        .style("opacity", 0);
+    }
+  });
+  circle4.on("click", click4);
+  function click4(d)
+  {
+
+    cam4();
+    canvas.remove();
+  }
+
+
+
+
+
+function cam1()
+{
+    div.transition()
+    .style("opacity", 0);
+
+  var shar =["GCC","OT","IS","AS","AF","AU","NO","So","EU","EnU","ND"]
+  var cauntry=["&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCountry Group&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTotal Units&nbsp&nbsp&nbspTotal Weight&nbsp&nbsp&nbspTotal Value"
+    ,"<br> <br> <h9 style=\"color:#A93226;\">Gulf Cooperation Council: (6,231,272) (30,004,698) (79,009,332) [10%]</h9> "
+    ,"\<br\><br><h9 style=\"color:#884EA0;\">Other Arab League Countries: (2,384,883) (18,185,638) (44,836,217)[6%]</h9> ",
+    "\<br\><br><h9 style=\"color:#1F618D;\">Islamic not Arabic Countries: (900,241) (22,824,756) (44,663,885)[5.7%]</h9> ",
+    "\<br\><br><h9 style=\"color:#17A589;\">Asian not Arabic not Islamic: (1,215,892) (262,744,960) (388,133,408)[51%]</h9> ",
+    "\<br\><br><h9 style=\"color:#229954;\">African not Arabic not Islamic: (303,883) (9,900,329) (16,073,038)[2%]</h9> ",
+    "\<br\><br><h9 style=\"color:#B7950B;\">Australia and Oceania: (1,537) (2,312,85) (2,934,838)[0.38%] </h9>",
+    "\<br\><br><h9 style=\"color:#A04000;\">North America: (27,389) (60,812,346) (86,533,126) [11%]</h9>",
+  "\<br\><br><h9 style=\"color:#626567;\">South America: (4,079) (4,787,417) (8,318,866)[1%] </h9>",
+    "\<br\><br><h9 style=\"color:#808000;\">European Union: (171,287) (52,761,330) (88,997,078)[12%]</h9> ",
+    "\<br\><br><h9 style=\"color:#2C3E50;\">Europe not European Union: (43,031) (1,907,998) (3,812,224)[3%]</h9> ",
+    "\<br\><br><h9 style=\"color:#D2B4DE;\">Not Defined: (0) (259) (1,044) [0.000125%] </h9>"]
+
+  var unit15=[ "6,231,272","2,384,883","900,241","1,215,892","303,883","1,537","27,389","4,079","171,287","43,031","0"]
+  var wight15=[ "30,004,698","18,185,638","22,824,756","262,744,960","9,900,329","2,312,85","60,812,346","4,787,417","52,761,330","1,907,998","259"]
+  var value15=[ "79,009,332","44,836,217","44,663,885","388,133,408","16,073,038","2,934,838","86,533,126","8,318,866","88,997,078","3,812,224","1,044"]
+  var percnt=[ 10,6,5.7,51,2,0.38,11,1,12,3]
+  var r=300;
+
+  var color = d3.scale.ordinal()
+    .range(["#A93226", "#884EA0", "#1F618D", "#17A589","#229954","#B7950B","#A04000","#626567","#808000","#2C3E50","#D2B4DE"]);
+
+  var canvas =d3.select("body").append("svg")
+    .attr("width",600)
+    .attr("height",600)
+
+  var group =canvas.append("g")
+    .attr("transform","translate(300,300)");
+
+  var arc =d3.svg.arc()
+    .innerRadius(225)
+    .outerRadius(r);
+
+  var pie =d3.layout.pie()
+    .value(function(d) { return d; })
+    .sort(null);
+
+  var arcs=group.selectAll(".arc")
+    .data(pie(percnt))
+    .enter()
+    .append("g")
+    .attr("class","arc");
+
+  arcs.append("path")
+    .attr("d",arc )
+    .attr("fill",function (d){return color(d.data);});
+
+  arcs.append("text")
+    .data(pie(percnt))
+    .attr("transform",function (d){return"translate("+arc.centroid(d)+")"})
+    .attr("text-anchor","middle")
+    .attr("font-size","1.2em")
+    .text(function (d){return d.data+"%";})
+
+
+  arcs.on('mouseover', function(d) {
+    d3.select(this).style("cursor", "pointer");
+    d3.select(this).transition()
+      .attr('opacity', '.80');
+     div.transition()
+      .style("opacity", 1);
+    div.html(cauntry)
+      .style("left",  "620px")
+      .style("top", "20px");
+  });
+
+  arcs.on('mouseout', function() {
+    d3.select(this).style("cursor", "default");
+    d3.select(this).transition()
+      .attr('opacity', '1');
+    div.transition()
+      .style("opacity", 0);
+  });
+
+
+}
+
+
+  function cam2()
+  {
+    div.transition()
+      .style("opacity", 0);
+
+    var cauntry=["&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCountry Group&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTotal Units&nbsp&nbsp&nbspTotal Weight&nbsp&nbsp&nbspTotal Value"
+      ,"<br> <br> <h9 style=\"color:#A93226;\">Gulf Cooperation Council: (1,728,553)(35,560)(80,559) [11.7%]</h9> "
+      ,"\<br\><br><h9 style=\"color:#884EA0;\">Other Arab League Countries: (17,316)(17,520)(38,288)[5.7%]</h9> ",
+      "\<br\><br><h9 style=\"color:#1F618D;\">Islamic not Arabic Countries: (0)(21,813)(37,042)[5.4%]</h9> ",
+      "\<br\><br><h9 style=\"color:#17A589;\">Asian not Arabic not Islamic: (0)(287,146)(350,739)[50.9%]</h9> ",
+      "\<br\><br><h9 style=\"color:#229954;\">African not Arabic not Islamic: (1,056)(12,737)(16,777)[2.4%]</h9> ",
+      "\<br\><br><h9 style=\"color:#B7950B;\">Australia and Oceania: (0)(2,566)(2,635)[0.38%] </h9>",
+      "\<br\><br><h9 style=\"color:#A04000;\">North America: (29)(60,356)(71,052) [10.3%]</h9>",
+      "\<br\><br><h9 style=\"color:#626567;\">South America: (7,861)(5,671)(7,717)[1.12%] </h9>",
+      "\<br\><br><h9 style=\"color:#808000;\">European Union: (18)(56,098)(81,310)[11.8,%]</h9> ",
+      "\<br\><br><h9 style=\"color:#2C3E50;\">Europe not European Union: (1100)(800)(2291)[0.33%]</h9> "]
+
+var percnt=[ 11.7,5.7,5.4,50.9,2.4,0.38,10.3,1.12,11.8,0.33]
+
+    var r=300;
+    var color = d3.scale.ordinal()
+      .range(["#A93226", "#884EA0", "#1F618D", "#17A589","#229954","#B7950B","#A04000","#626567","#808000","#2C3E50"]);
+
+    var canvas =d3.select("body").append("svg")
+      .attr("width",600)
+      .attr("height",600)
+
+    var group =canvas.append("g")
+      .attr("transform","translate(300,300)");
+
+    var arc =d3.svg.arc()
+      .innerRadius(225)
+      .outerRadius(r);
+
+    var pie =d3.layout.pie()
+      .value(function(d) { return d; })
+
+
+    var arcs=group.selectAll(".arc")
+      .data(pie(percnt))
+      .enter()
+      .append("g")
+      .attr("class","arc");
+
+    arcs.append("path")
+      .attr("d",arc )
+      .attr("fill",function (d){return color(d.data);});
+
+    arcs.append("text")
+      .data(pie(percnt))
+      .attr("transform",function (d){return"translate("+arc.centroid(d)+")"})
+      .attr("text-anchor","middle")
+      .attr("font-size","1.2em")
+      .text(function (d){return d.data+"%";})
+
+
+    arcs.on('mouseover', function(d) {
+      d3.select(this).style("cursor", "pointer");
+      d3.select(this).transition()
+        .attr('opacity', '.80');
+      div.transition()
+        .style("opacity", 1);
+      div.html(cauntry)
+        .style("left",  "620px")
+        .style("top", "20px");
+    });
+
+    arcs.on('mouseout', function() {
+      d3.select(this).style("cursor", "default");
+      d3.select(this).transition()
+        .attr('opacity', '1');
+      div.transition()
+        .style("opacity", 0);
+    });
+
+
+  }
+
+  function cam3()
+  {
+    div.transition()
+      .style("opacity", 0);
+
+
+    var cauntry=["&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCountry Group&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTotal Units&nbsp&nbsp&nbspTotal Weight&nbsp&nbsp&nbspTotal Value"
+      ,"<br> <br> <h9 style=\"color:#A93226;\">Gulf Cooperation Council: (1,645,965)(37,008,423)(93,704,521) [11.2%]</h9> "
+      ,"\<br\><br><h9 style=\"color:#884EA0;\">Other Arab League Countries: (61,186)(21,046,513)(48,537,274)[5.8%]</h9> ",
+      "\<br\><br><h9 style=\"color:#1F618D;\">Islamic not Arabic Countries: (0)(21,283,221)(43,350,451)[5.2%]</h9> ",
+      "\<br\><br><h9 style=\"color:#17A589;\">Asian not Arabic not Islamic: (2,832)(276,036,160)(434,618,932)[52%]</h9> ",
+      "\<br\><br><h9 style=\"color:#229954;\">African not Arabic not Islamic: (780)(15,296,993)(25,444,313)[3%]</h9> ",
+      "\<br\><br><h9 style=\"color:#B7950B;\">Australia and Oceania: (7)(1969300)(2,559,432)[0.30%] </h9>",
+      "\<br\><br><h9 style=\"color:#A04000;\">North America: (148)(51,713,856)(76,623,463) [9.2%]</h9>",
+      "\<br\><br><h9 style=\"color:#626567;\">South America: (346)(4,569,598)(7,508,812)[0.9%] </h9>",
+      "\<br\><br><h9 style=\"color:#808000;\">European Union: (30)(54,509,312)(97,297,816)[11.7%]</h9> ",
+      "\<br\><br><h9 style=\"color:#2C3E50;\">Europe not European Union: (69,249)(333,313)(2,236,279)[0.26%]</h9> "]
+
+
+                                                           var percnt=[ 11.2,5.8,5.2,52,3,0.30,9.2,0.9,11.7,0.26]
+    var r=300;
+
+    var color = d3.scale.ordinal()
+      .range(["#A93226", "#884EA0", "#1F618D", "#17A589","#229954","#B7950B","#A04000","#626567","#808000","#2C3E50"]);
+
+    var canvas =d3.select("body").append("svg")
+      .attr("width",600)
+      .attr("height",600)
+
+    var group =canvas.append("g")
+      .attr("transform","translate(300,300)");
+
+    var arc =d3.svg.arc()
+      .innerRadius(225)
+      .outerRadius(r);
+
+    var pie =d3.layout.pie()
+      .value(function(d) { return d; })
+      .sort(null);
+
+    var arcs=group.selectAll(".arc")
+      .data(pie(percnt))
+      .enter()
+      .append("g")
+      .attr("class","arc");
+
+    arcs.append("path")
+      .attr("d",arc )
+      .attr("fill",function (d){return color(d.data);});
+
+    arcs.append("text")
+      .data(pie(percnt))
+      .attr("transform",function (d){return"translate("+arc.centroid(d)+")"})
+      .attr("text-anchor","middle")
+      .attr("font-size","1.2em")
+      .text(function (d){return d.data+"%";})
+
+
+    arcs.on('mouseover', function(d) {
+      d3.select(this).style("cursor", "pointer");
+      d3.select(this).transition()
+        .attr('opacity', '.80');
+      div.transition()
+        .style("opacity", 1);
+      div.html(cauntry)
+        .style("left",  "620px")
+        .style("top", "20px");
+    });
+
+    arcs.on('mouseout', function() {
+      d3.select(this).style("cursor", "default");
+      d3.select(this).transition()
+        .attr('opacity', '1');
+      div.transition()
+        .style("opacity", 0);
+    });
+
+
+  }
+
+  function cam4()
+  {
+    div.transition()
+      .style("opacity", 0);
+
+    var cauntry=["&nbsp&nbsp&nbsp&nbsp&nbsp&nbspCountry Group&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspTotal Units&nbsp&nbsp&nbspTotal Weight&nbsp&nbsp&nbspTotal Value"
+      ,"<br> <br> <h9 style=\"color:#A93226;\">Gulf Cooperation Council: (874,397)(37,119,506)(102,403,230) [9.28%]</h9> "
+      ,"\<br\><br><h9 style=\"color:#884EA0;\">Other Arab League Countries: (40,130)(20,576,450)(51,945,921)[4.7%]</h9> ",
+      "\<br\><br><h9 style=\"color:#1F618D;\">Islamic not Arabic Countries: (0)(24,730,823)(59,131,740)[5.4%]</h9> ",
+      "\<br\><br><h9 style=\"color:#17A589;\">Asian not Arabic not Islamic: (1,524)(284,325,274)(585,406,688)[53%]</h9> ",
+      "\<br\><br><h9 style=\"color:#229954;\">African not Arabic not Islamic: (31)(16,108,853)(32,102,664)[2.9%]</h9> ",
+      "\<br\><br><h9 style=\"color:#B7950B;\">Australia and Oceania: (31)(2,114,362)(3,320,785)[0.30%] </h9>",
+      "\<br\><br><h9 style=\"color:#A04000;\">North America: (31)(54,219,661)(106,492,436) [9.6%]</h9>",
+      "\<br\><br><h9 style=\"color:#626567;\">South America: (145)(5,203,878)(11,400,428)[1%] </h9>",
+      "\<br\><br><h9 style=\"color:#808000;\">European Union: (115)(64,999,119)(148,179,879)[13.4%]</h9> ",
+      "\<br\><br><h9 style=\"color:#2C3E50;\">Europe not European Union: (136,246)(399,345)(3,515,092)[0.3%]</h9> ",
+      "\<br\><br><h9 style=\"color:#D2B4DE;\">Not Defined: (7)(190)(1,640) [0.000148%] </h9>"]
+
+                                                     var percnt=[ 9.28,4.7,5.4,53,2.9,0.30,9.6,1,13.4,0.3]
+    var r=300;
+                                                                 1,103,900,503
+    var color = d3.scale.ordinal()
+      .range(["#A93226", "#884EA0", "#1F618D", "#17A589","#229954","#B7950B","#A04000","#626567","#808000","#2C3E50"]);
+
+    var canvas =d3.select("body").append("svg")
+      .attr("width",600)
+      .attr("height",600)
+
+    var group =canvas.append("g")
+      .attr("transform","translate(300,300)");
+
+    var arc =d3.svg.arc()
+      .innerRadius(225)
+      .outerRadius(r);
+
+    var pie =d3.layout.pie()
+      .value(function(d) { return d; })
+
+
+    var arcs=group.selectAll(".arc")
+      .data(pie(percnt))
+      .enter()
+      .append("g")
+      .attr("class","arc");
+
+    arcs.append("path")
+      .attr("d",arc )
+      .attr("fill",function (d){return color(d.data);});
+
+    arcs.append("text")
+      .data(pie(percnt))
+      .attr("transform",function (d){return"translate("+arc.centroid(d)+")"})
+      .attr("text-anchor","middle")
+      .attr("font-size","1.2em")
+      .text(function (d){return d.data+"%";})
+
+
+    arcs.on('mouseover', function(d) {
+      d3.select(this).style("cursor", "pointer");
+      d3.select(this).transition()
+        .attr('opacity', '.80');
+      div.transition()
+        .style("opacity", 1);
+      div.html(cauntry)
+        .style("left",  "620px")
+        .style("top", "20px");
+    });
+
+    arcs.on('mouseout', function() {
+      d3.select(this).style("cursor", "default");
+      d3.select(this).transition()
+        .attr('opacity', '1');
+      div.transition()
+        .style("opacity", 0);
+    });
+
+
+  }
+
+
+
+
+
+</script>
+
+</html>
